@@ -1,0 +1,33 @@
+type Freelancer {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+    description: String!
+    categories: [String!]
+    rating: Float
+    reviews: [String!]
+    teams: [String!]
+}
+
+input FreelancerRegDto {
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+    description: String!
+    categories: [String!]
+    rating: Float
+    reviews: [String!]
+    teams: [String!]
+}
+
+type Query {
+    getFreelancerById(id: ID!): Freelancer
+    getAllFreelancers: [Freelancer]
+}
+
+type Mutation {
+    createFreelancer(freelancer: FreelancerRegDto!): Freelancer
+}

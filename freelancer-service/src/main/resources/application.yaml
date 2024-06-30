@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: freelancer-service
+  datasource:
+    url: jdbc:postgresql://localhost:5051/freelancer_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+graphql:
+  graphiql:
+    enabled: true
