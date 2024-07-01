@@ -3,6 +3,7 @@ package kg.kyzmatapp.freelancerservice.controllers;
 import kg.kyzmatapp.freelancerservice.models.Freelancer;
 import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 import kg.kyzmatapp.freelancerservice.services.FreelancerService;
+import kg.kyzmatapp.freelancerservice.utils.FreelancerUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -30,17 +31,6 @@ public class FreelancerController {
 
     @MutationMapping
     public Freelancer createFreelancer(@Argument FreelancerRegDto freelancer) {
-        Freelancer fr = Freelancer.builder()
-                .firstName(freelancer.getFirstName())
-                .lastName(freelancer.getLastName())
-                .email(freelancer.getEmail())
-                .phone(freelancer.getPhone())
-                .description(freelancer.getDescription())
-                .teams(freelancer.getTeams())
-                .rating(freelancer.getRating())
-                .reviews(freelancer.getReviews())
-                .categories(freelancer.getCategories())
-                .build();
-        return freelancerService.createFreelancer(fr);
+        return freelancerService.createFreelancer(FreelancerUtils.ConvertToFreelancer(freelancer));
     }
 }
