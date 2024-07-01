@@ -22,7 +22,7 @@ public class FreelancerUtils {
     }
 
     public static List<Freelancer> RandomFreelancers(int length) {
-        List<Freelancer> freelancers = new ArrayList<Freelancer>();
+        List<Freelancer> freelancers = new ArrayList<>();
         for (int i = 0; i < length; i++) {
             freelancers.add(RandomFreelancer());
         }
