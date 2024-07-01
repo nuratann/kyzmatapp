@@ -8,5 +8,5 @@ import java.util.List;
 public interface FreelancerService {
     Freelancer getFreelancer(String freelancerId);
     List<Freelancer> getAllFreelancers();
-    Freelancer createFreelancer(FreelancerRegDto freelancer);
+    Freelancer createFreelancer(Freelancer freelancer);
 }

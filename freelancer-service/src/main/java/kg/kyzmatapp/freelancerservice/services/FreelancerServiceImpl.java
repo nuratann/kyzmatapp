@@ -3,10 +3,12 @@ package kg.kyzmatapp.freelancerservice.services;
 import kg.kyzmatapp.freelancerservice.models.Freelancer;
 import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 import kg.kyzmatapp.freelancerservice.repositories.FreelancerRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class FreelancerServiceImpl implements FreelancerService{
 
@@ -27,19 +29,8 @@ public class FreelancerServiceImpl implements FreelancerService{
     }
 
     @Override
-    public Freelancer createFreelancer(FreelancerRegDto freelancerRegDto) {
-        Freelancer freelancer = Freelancer.builder()
-                .firstName(freelancerRegDto.getFirstName())
-                .lastName(freelancerRegDto.getLastName())
-                .email(freelancerRegDto.getEmail())
-                .phone(freelancerRegDto.getPhone())
-                .description(freelancerRegDto.getDescription())
-                .teams(freelancerRegDto.getTeams())
-                .rating(freelancerRegDto.getRating())
-                .reviews(freelancerRegDto.getReviews())
-                .categories(freelancerRegDto.getCategories())
-                .build();
-
+    public Freelancer createFreelancer(Freelancer freelancer) {
+        log.info("Creating freelancer {}", freelancer);
         return freelancerRepository.save(freelancer);
     }
 }

@@ -3,6 +3,7 @@ package kg.kyzmatapp.freelancerservice.controllers;
 import kg.kyzmatapp.freelancerservice.models.Freelancer;
 import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 import kg.kyzmatapp.freelancerservice.services.FreelancerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -12,13 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Controller
 public class FreelancerController {
     private final FreelancerService freelancerService;
-
-    public FreelancerController(FreelancerService freelancerService) {
-        this.freelancerService = freelancerService;
-    }
 
     @QueryMapping
     public List<Freelancer> getAllFreelancers() {
@@ -32,6 +30,17 @@ public class FreelancerController {
 
     @MutationMapping
     public Freelancer createFreelancer(@Argument FreelancerRegDto freelancer) {
-        return freelancerService.createFreelancer(freelancer);
+        Freelancer fr = Freelancer.builder()
+                .firstName(freelancer.getFirstName())
+                .lastName(freelancer.getLastName())
+                .email(freelancer.getEmail())
+                .phone(freelancer.getPhone())
+                .description(freelancer.getDescription())
+                .teams(freelancer.getTeams())
+                .rating(freelancer.getRating())
+                .reviews(freelancer.getReviews())
+                .categories(freelancer.getCategories())
+                .build();
+        return freelancerService.createFreelancer(fr);
     }
 }
