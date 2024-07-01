@@ -1,7 +1,6 @@
 package kg.kyzmatapp.freelancerservice.services;
 
 import kg.kyzmatapp.freelancerservice.models.Freelancer;
-import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 
 import java.util.List;
 

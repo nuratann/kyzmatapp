@@ -13,10 +13,10 @@ public class FreelancerUtils {
                 .lastName(RandomStringGenerator.generateRandomString(10))
                 .email(RandomStringGenerator.generateRandomEmail())
                 .phone(RandomStringGenerator.generateRandomPhone(9))
-                .teams(new HashSet<String>())
-                .categories(new HashSet<String>())
+                .teams(new HashSet<>())
+                .categories(new HashSet<>())
                 .description(RandomStringGenerator.generateRandomString(50))
-                .reviews(new HashSet<String>())
+                .reviews(new HashSet<>())
                 .rating(new Random().nextFloat(1,5))
                 .build();
     }

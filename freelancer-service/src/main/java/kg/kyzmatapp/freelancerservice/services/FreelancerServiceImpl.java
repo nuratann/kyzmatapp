@@ -1,7 +1,6 @@
 package kg.kyzmatapp.freelancerservice.services;
 
 import kg.kyzmatapp.freelancerservice.models.Freelancer;
-import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 import kg.kyzmatapp.freelancerservice.repositories.FreelancerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
