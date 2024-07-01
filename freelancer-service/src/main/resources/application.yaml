@@ -11,5 +11,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-graphiql:
-  enabled: true
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+    cors:
+      allowed-origins: "http://localhost:3000"
+      allowed-methods: "GET,POST"
+      max-age: 1800s
