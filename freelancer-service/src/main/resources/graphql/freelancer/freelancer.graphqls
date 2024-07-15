@@ -22,12 +22,3 @@ input FreelancerRegDto {
     reviews: [String]
     teams: [String]
 }
-
-type Query {
-    getFreelancerById(id: ID!): Freelancer
-    getAllFreelancers: [Freelancer]
-}
-
-type Mutation {
-    createFreelancer(freelancer: FreelancerRegDto!): Freelancer
-}

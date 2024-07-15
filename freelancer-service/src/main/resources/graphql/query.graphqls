@@ -1,0 +1,4 @@
+type Query {
+    getFreelancerById(id: ID!): Freelancer
+    getAllFreelancers: [Freelancer]
+}

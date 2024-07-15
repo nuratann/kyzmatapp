@@ -24,7 +24,7 @@ public class FreelancerController {
     }
 
     @QueryMapping
-    public Freelancer getFreelancerById(@Param("id") String id) {
+    public Freelancer getFreelancerById(@Argument String id) {
         return freelancerService.getFreelancer(id);
     }
 

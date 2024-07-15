@@ -1,0 +1,3 @@
+type Mutation {
+    createFreelancer(freelancer: FreelancerRegDto!): Freelancer
+}

@@ -19,3 +19,6 @@ spring:
       allowed-origins: "http://localhost:3000"
       allowed-methods: "GET,POST"
       max-age: 1800s
+server:
+  http2:
+    enabled: true
