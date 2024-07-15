@@ -27,7 +27,7 @@ public class FreelancerControllerTest {
     private FreelancerService freelancerService;
 
     @Test
-    void testGetAllFreelancers() throws Exception {
+    void testGetAllFreelancers() {
 
         List<Freelancer> freelancers = FreelancerUtils.RandomFreelancers(5);
         when(freelancerService.getAllFreelancers()).thenReturn(freelancers);

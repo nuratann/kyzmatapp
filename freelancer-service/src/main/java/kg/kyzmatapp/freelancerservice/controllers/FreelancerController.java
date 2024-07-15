@@ -5,7 +5,6 @@ import kg.kyzmatapp.freelancerservice.models.dtos.FreelancerRegDto;
 import kg.kyzmatapp.freelancerservice.services.FreelancerService;
 import kg.kyzmatapp.freelancerservice.utils.FreelancerUtils;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
